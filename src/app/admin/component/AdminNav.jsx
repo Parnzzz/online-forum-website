@@ -7,7 +7,7 @@ import { signOut } from 'next-auth/react';
 
 const PressStart2Pfont = Press_Start_2P({
     weight:'400',
-    subsets: [latin],
+    subsets: ['latin'],
   });
 
 
