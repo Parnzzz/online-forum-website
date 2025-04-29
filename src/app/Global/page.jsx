@@ -18,7 +18,7 @@ function Globalpage() {
     console.log(getname)
     const getAllpostData = async()=>{
         try{
-            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/Totalposts`,{
+            const res = await fetch(`/api/Totalposts`,{
                 method: "GET",
                 cache: "no-store"
             })
