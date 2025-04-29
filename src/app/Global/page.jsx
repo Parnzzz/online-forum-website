@@ -33,7 +33,7 @@ function Globalpage() {
     }
     const getNamepostData = async()=>{
         try{
-            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/Totaluser`,{
+            const res = await fetch(`/api/Totaluser`,{
                 method: "GET",
                 cache: "no-store"
             })
