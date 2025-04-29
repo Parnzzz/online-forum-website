@@ -11,7 +11,7 @@ const authOptions = {
           // The name to display on the sign in form (e.g. 'Sign in with...')
           name: 'credentials',
           
-          credentials: {email:{ label:"Email",type:"text"},password:{label:"Password",type:"password"} },
+          credentials: {},
           async authorize(credentials, req) {
            const {email,password} =credentials
           // const user = {id: '1'}
