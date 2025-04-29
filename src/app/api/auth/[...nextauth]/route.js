@@ -11,7 +11,8 @@ const authOptions = {
           credentials: {email: { label: "Email", type: "text" },
   password: { label: "Password", type: "password" },},
           async authorize(credentials) {
-            
+           console.log("Credentials received:", credentials)
+ 
             const { email, password } = credentials;
 
             try {
