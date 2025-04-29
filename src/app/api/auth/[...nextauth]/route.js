@@ -34,6 +34,7 @@ const authOptions = {
 
             } catch(error) {
                 console.log("Error: ", error);
+                 return null;
             }
             
           }
