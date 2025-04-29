@@ -19,7 +19,7 @@ function AdminUserpage() {
    console.log("ALLuser",alluserdata)
    const getalluser = async() =>{
     try{
-    const res = await fetch("http://localhost:3000/api/Totaluser",{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/Totaluser`,{
         cache: "no-store"
     }
     )
@@ -58,7 +58,7 @@ function AdminUserpage() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {alluserdata.map((user, index) =>(
+                                    {alluserdata?.map((user, index) =>(
                                     <tr key={user._id}>
                                         <td className='p-5 '>{user?._id}</td>
                                         <td className='p-5'>{user?.name}</td>

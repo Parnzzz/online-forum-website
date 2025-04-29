@@ -30,13 +30,13 @@ function Createpage() {
   const handleSubmit = async(e) =>{
     e.preventDefault();
     const filteredImgs = img.filter(img => img.trim() !== "");
-    const imgArray = filteredImgs.join(",");  //convert string
+    const imgArray = filteredImgs.join(",");  //convert  for string
     if(!title || img.length <0 || !content){
       alert("please complete all input.");
       return;
     }
     try{
-       const res= await fetch("http://localhost:3000/api/posts",{
+       const res= await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts`,{
             method: "POST",
             headers:{
               "Content-Type": "application/json"

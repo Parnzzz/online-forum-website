@@ -28,7 +28,7 @@ function Editpage() {
 
     const getpostbyid = async (id)  =>{
        try{
-          const res = await fetch(`http://localhost:3000/api/posts/${id}`,{
+          const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/${id}`,{
             method: "GET",
             cache: "no-store"
 
@@ -56,7 +56,7 @@ function Editpage() {
     const handleSubmit = async(e) =>{
       e.preventDefault();
       try{
-        const res = await fetch(`http://localhost:3000/api/posts/${id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/${id}`,{
           method: "PUT",
           headers: {
             "Content-Type": "application/json"    //specify type of data sent //

@@ -9,7 +9,7 @@ function Deletebutton ({id}){
     const confirmed = confirm("ARE YOU SURE");
 
     if(confirmed){
-        const res = await fetch(`http://localhost:3000/api/Totaluser?id=${id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/Totaluser?id=${id}`,{
             method: "DELETE"
         })
         if(res.ok){

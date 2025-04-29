@@ -6,7 +6,8 @@ import {Press_Start_2P} from"next/font/google";
 import { signOut } from 'next-auth/react';
 
 const PressStart2Pfont = Press_Start_2P({
-    weight:'400'
+    weight:'400',
+    subsets: ['latin'],
   });
 
 

@@ -52,7 +52,7 @@ function Adminedituser() {
       const updatedEmail = newEmail || userOlddata.email;
       const updatedPassword = newPassword || userOlddata.password;
       try{
-        const res = await fetch(`http://localhost:3000/api/Totaluser/${id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/Totaluser/${id}`,{
           method: "PUT",
           headers:{
             "content-Type":"application/json"

@@ -26,7 +26,7 @@ function AdminEditpage() {
      
      const getoldpost = async(id) =>{
       try{
-         const res = await fetch(`http://localhost:3000/api/Totalposts/${id}`,{
+         const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/Totalposts/${id}`,{
           method: "GET",
           cache: "no-store"
          })
@@ -48,7 +48,7 @@ function AdminEditpage() {
 
      const handleSubmit = async(e) =>{
       try{
-        const res = await fetch(`http://localhost:3000/api/Totalposts/${id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/Totalposts/${id}`,{
           method: "PUT",
           headers: {"content-Type":"application/json"},
           body : JSON.stringify({newTitle: newTitle || oldpost.title,newImg: newImg || oldpost.img,newContent: newContent || oldpost.content})

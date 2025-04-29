@@ -20,7 +20,7 @@ function AdminUserpage() {
 
      const getAllpost = async() =>{
         try{
-        const res = await fetch("http://localhost:3000/api/Totalposts" ,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/Totalposts` ,{
             cache: "no-store"
         })
         if(!res.ok){
