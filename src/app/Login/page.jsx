@@ -1,4 +1,4 @@
-
+"use client"
 import React ,{useEffect, useState} from 'react'
 import Navbar from '../../component/navbar'
 import Container from '../../component/Container'
