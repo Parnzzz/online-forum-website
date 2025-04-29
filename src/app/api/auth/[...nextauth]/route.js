@@ -30,7 +30,12 @@ const authOptions = {
                     return null;
                 }
 
-                return user;
+                return {
+                  id: user._id.toString(),
+                  name: user.name,
+                  email: user.email,
+                  role: user.role,
+                  };
 
             } catch(error) {
                 console.log("Error: ", error);
