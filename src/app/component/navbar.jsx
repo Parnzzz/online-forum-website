@@ -2,8 +2,6 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Logo from '../../public/next.svg'
-import Image from 'next/image'
 import {Press_Start_2P} from "next/font/google";
 import { signOut } from 'next-auth/react'
 

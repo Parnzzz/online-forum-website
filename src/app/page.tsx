@@ -1,17 +1,15 @@
 "use client"
 import Image from "next/image";
-import Container from "../component/Container"
-import Navbar from "../component/navbar"
-import Vercel from '../../public/vercel.svg'
-import Footer from '../component/footer'
+import Container from "./component/Container"
+import Navbar from "./component/navbar"
+import Footer from './component/footer'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import { useSession } from "next-auth/react";
-import { use } from "react";
+
 
 
 
@@ -24,8 +22,8 @@ export default function Home() {
      <Container>
      <Navbar session={session} />
     <div className="container mx-auto flex-grow text-center  p-10">
-      <h3 className="text-5xl">Kittisak Buachan</h3>
-      <p className="text-xl">full-stack dev website </p>
+      <h3 className="text-5xl text-white">Kittisak Buachan</h3>
+      <p className="text-xl text-white">full-stack dev website </p>
       <div className="  flex justify-center items-center my-10 ">
       <div className="w-[1000px] h-[800px]">
       <Swiper

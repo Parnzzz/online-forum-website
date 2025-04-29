@@ -1,9 +1,9 @@
 "use client"
 
 import React ,{useState, useEffect}from 'react'
-import Navbar from '../../../component/navbar'
-import Footer from '../../../component/footer'
-import Container from '../../../component/Container'
+import Navbar from '../../component/navbar'
+import Footer from '../../component/footer'
+import Container from '../../component/Container'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { redirect,useRouter,useParams } from 'next/navigation'

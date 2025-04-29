@@ -1,8 +1,8 @@
 "use client"
 import React,{useEffect,useState} from 'react';
-import Container from '../../component/Container';
-import Navbar from '../../component/navbar';
-import Footer from '../../component/footer';
+import Container from '../component/Container';
+import Navbar from '../component/navbar';
+import Footer from '../component/footer';
 import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 import Link from'next/link';
