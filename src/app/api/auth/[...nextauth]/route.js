@@ -9,7 +9,7 @@ const authOptions = {
     providers: [
         CredentialsProvider({
           // The name to display on the sign in form (e.g. 'Sign in with...')
-          name: 'Credentials',
+          name: 'credentials',
           
           credentials: {email:{ label:"Email",type:"text"},password:{label:"Password",type:"password"} },
           async authorize(credentials, req) {
