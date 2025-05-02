@@ -28,6 +28,7 @@ export async function POST(req) {
         status: 200,
         headers: {
           'Access-Control-Allow-Origin': allowedOrigin ,
+          'Access-Control-Allow-Headers': 'Content-Type',
           'Content-Type': 'application/json',
         },
       }
@@ -40,6 +41,7 @@ export async function POST(req) {
         status: 500,
         headers: {
           'Access-Control-Allow-Origin':allowedOrigin,
+          'Access-Control-Allow-Headers': 'Content-Type',
         },
       }
     );
