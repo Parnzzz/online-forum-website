@@ -32,7 +32,7 @@ function RegisterPage() {
       return;
     }
     try{
-        const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/userExist`,{  //ยิงrouteไปยังuserExist เช็คemail
+        const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/userExist`,{  
           method: "POST",
           headers: {
             "Content-type": "application/json"
