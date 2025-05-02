@@ -37,7 +37,8 @@ function RegisterPage() {
           headers: {
             "Content-type": "application/json"
           },
-          body: JSON.stringify({ email,name })
+          body: JSON.stringify({ email,name }),
+         mode: 'cors',
         })
          
         const{user ,username} =await resUserExists.json();
