@@ -106,7 +106,7 @@ function RegisterPage() {
                 <input type="text"onChange={(e)=>SetEmail(e.target.value)}  className='w-full bg-gray-200 border py-2 px-3 text-lg my-2' placeholder='Enter your email' />
                 <input type="password" onChange={(e)=>Setpassword(e.target.value)} className='w-full bg-gray-200 border py-2 px-3 text-lg my-2' placeholder='Enter your password' />
                 <input type="password"onChange={(e)=>SetconfirmPassword(e.target.value)}  className='w-full bg-gray-200 border py-2 px-3 text-lg my-2' placeholder='Confirm your password' />
-                 <button className='bg-green-500 text-black border py-2 px-3 rounded text-lg my-2' type="submit">Sign up</button>
+                 <button className='bg-green-500 text-black border py-2 px-3 rounded text-lg my-2 cursor-pointer' type="submit">Sign up</button>
                 <hr className='my-3'/>
                 <p>Already have an account{' '}
                  <Link href="/Login" className='text-blue-500 hover:underline'>Register</Link>
