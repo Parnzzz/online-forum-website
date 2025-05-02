@@ -22,8 +22,8 @@ export default function Home() {
      <Container>
      <Navbar session={session} />
     <div className="container mx-auto flex-grow text-center  p-10">
-      <h3 className="text-5xl text-white">Kittisak Buachan</h3>
-      <p className="text-xl text-white">full-stack dev website </p>
+      <h3 className="text-5xl text-white">Community Website</h3>
+      <p className="text-xl text-white">Post your story with image </p>
       <div className="  flex justify-center items-center my-10 ">
       <div className="w-[1000px] h-[800px]">
       <Swiper
