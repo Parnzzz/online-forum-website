@@ -2,20 +2,40 @@ import { NextResponse } from 'next/server';
 import { connectMongoDB } from '../../../../lib/mongodb';
 import User from '../../../../models/user';
 
-const allowedOrigin = ['https://online-forum-website-pfv1kkuga-parnzzzs-projects.vercel.app',
-                      'https://online-forum-website.vercel.app'];
-export async function OPTIONS() {
-  return new NextResponse(null, {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': allowedOrigin,
+
+const allowedOrigins = [
+  'https://online-forum-website.vercel.app',
+  'http://localhost:3000',
+];
+
+function getCORSHeaders(origin) {
+  if (allowedOrigins.includes(origin)) {
+    return {
+      'Access-Control-Allow-Origin': origin,
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
-    },
+    };
+  }
+  return {
+    // No origin allowed
+    'Access-Control-Allow-Origin': 'null',
+  };
+}
+
+export async function OPTIONS(req) {
+  const origin = req.headers.get('origin') || '';
+  const headers = getCORSHeaders(origin);
+
+  return new NextResponse(null, {
+    status: 204,
+    headers,
   });
 }
 
 export async function POST(req) {
+  const origin = req.headers.get('origin') || '';
+  const corsHeaders = getCORSHeaders(origin);
+
   try {
     await connectMongoDB();
     const { email, name } = await req.json();
@@ -28,21 +48,20 @@ export async function POST(req) {
       {
         status: 200,
         headers: {
-          'Access-Control-Allow-Origin': allowedOrigin ,
-          'Access-Control-Allow-Headers': 'Content-Type',
+          ...corsHeaders,
           'Content-Type': 'application/json',
         },
       }
     );
   } catch (error) {
-    console.log(error);
+    console.error('API error:', error);
     return new NextResponse(
       JSON.stringify({ error: 'Internal Server Error' }),
       {
         status: 500,
         headers: {
-          'Access-Control-Allow-Origin':allowedOrigin,
-          'Access-Control-Allow-Headers': 'Content-Type',
+          ...corsHeaders,
+          'Content-Type': 'application/json',
         },
       }
     );
