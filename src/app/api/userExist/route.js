@@ -27,7 +27,7 @@ export async function POST(req) {
       {
         status: 200,
         headers: {
-          'Access-Control-Allow-Origin': 'https://online-forum-website.vercel.app',
+          'Access-Control-Allow-Origin': allowedOrigin ,
           'Content-Type': 'application/json',
         },
       }
@@ -39,7 +39,7 @@ export async function POST(req) {
       {
         status: 500,
         headers: {
-          'Access-Control-Allow-Origin': 'https://online-forum-website.vercel.app',
+          'Access-Control-Allow-Origin':allowedOrigin,
         },
       }
     );
