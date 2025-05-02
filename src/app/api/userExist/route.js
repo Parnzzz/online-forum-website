@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { connectMongoDB } from '../../../../lib/mongodb';
 import User from '../../../../models/user';
 
-// Handle preflight (OPTIONS) request
+const allowedOrigin = 'https://online-forum-website-pfv1kkuga-parnzzzs-projects.vercel.app';
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
