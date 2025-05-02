@@ -1,4 +1,4 @@
-import NextAuth from "next-auth";
+import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectMongoDB } from "../../../../../lib/mongodb";
 import User from "../../../../../models/user";
@@ -8,9 +8,11 @@ const authOptions = {
     providers: [
         CredentialsProvider({
           name: 'credentials',
-          credentials: {},
+          credentials: {email: { label: "Email", type: "text" },
+  password: { label: "Password", type: "password" },},
           async authorize(credentials) {
-            
+           console.log("Credentials received:", credentials)
+ 
             const { email, password } = credentials;
 
             try {
@@ -28,10 +30,16 @@ const authOptions = {
                     return null;
                 }
 
-                return user;
+                return {
+                  id: user._id.toString(),
+                  name: user.name,
+                  email: user.email,
+                  role: user.role,
+                  };
 
             } catch(error) {
                 console.log("Error: ", error);
+                 return null;
             }
             
           }
